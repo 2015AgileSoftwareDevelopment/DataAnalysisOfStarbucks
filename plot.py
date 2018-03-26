@@ -12,26 +12,21 @@ data = [ dict(
     lat = df['Latitude'],
     lon = df['Longitude'],
     text = 'Store Number:'+df['Store Number'].astype(str)+
-    			'\nStore Name:'+df['Store Name'].astype(str)+
-    			'\nOwnership Type:'+df['Ownership Type'].astype(str)+
-    			'\nStreet Address:'+df['Street Address'].astype(str)+
-    			'\nCity:'+df['City'].astype(str),
+    			'<br>Store Name:'+df['Store Name'].astype(str)+
+    			'<br>Ownership Type:'+df['Ownership Type'].astype(str)+
+    			'<br>Street Address:'+df['Street Address'].astype(str)+
+    			'<br>City:'+df['City'].astype(str)+
+                '<br>State/Province:'+df['State/Province'].astype(str)+
+                '<br>Country:'+df['Country'].astype(str)+
+                '<br>Postcode:'+df['Postcode'].astype(str)+
+                '<br>Phone Number:'+df['Phone Number'].astype(str)+
+                '<br>Timezone:'+df['Timezone'].astype(str),
     marker = dict(
-        #color = df['Globvalue'],
+        color = df['Longitude'],
         colorscale = scl,
         reversescale = True,
         opacity = 0.7,
         size = 2,
-        colorbar = dict(
-            thickness = 10,
-            titleside = "right",
-            outlinecolor = "rgba(68, 68, 68, 0)",
-            ticks = "outside",
-            ticklen = 3,
-            showticksuffix = "last",
-            ticksuffix = " inches",
-            dtick = 0.1
-        ),
     ),
     type = 'scattergeo'
 ) ]
@@ -67,7 +62,7 @@ layout = dict(
             dtick = 5
         )
     ),
-    title = 'US Precipitation 06-30-2015<br>Source: <a href="http://water.weather.gov/precip/">NOAA</a>',
+    title = 'Data Analysis Of Starbucks',
 )
 fig = { 'data':data, 'layout':layout }
 plotly.offline.plot(fig, filename='precipitation')
