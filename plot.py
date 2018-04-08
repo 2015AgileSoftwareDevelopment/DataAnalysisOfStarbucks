@@ -52,13 +52,13 @@ layout = dict(
         lonaxis = dict(
             showgrid = True,
             gridwidth = 0.5,
-            range= [ -140.0, -55.0 ],
+            range= [ -180.0, 180.0 ],
             dtick = 5
         ),
         lataxis = dict (
             showgrid = True,
             gridwidth = 0.5,
-            range= [ 20.0, 60.0 ],
+            range= [ -90.0, 90.0 ],
             dtick = 5
         )
     ),
